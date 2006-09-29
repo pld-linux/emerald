@@ -80,8 +80,8 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}/engines/*.{la,a}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-%postun
+%post  -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
