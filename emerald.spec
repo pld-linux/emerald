@@ -3,13 +3,14 @@ Summary(pl):	Narzêdzie GTK+ do konfiguracji dekoracji okien w berylu
 Name:		emerald
 Version:	0.1.3
 Release:	1
+Epoch:		1
 License:	GPL/MIT
 Group:		X11
 Source0:	http://releases.beryl-project.org/%{version}/%{name}-%{version}.tar.bz2
 # Source0-md5:	27655582912eed701eef07083d445699
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
-BuildRequires:	beryl-core-devel
+BuildRequires:	beryl-core-devel >= 1:0.1.3
 BuildRequires:	dbus-glib-devel >= 0.50
 BuildRequires:	gtk+2-devel >= 2:2.8.0
 BuildRequires:	intltool >= 0.35.0
@@ -32,8 +33,8 @@ dekoracji okien w berylu.
 Summary:	Header files for emerald
 Summary(pl):	Pliki nag³ówkowe dla emerald
 Group:		Development/Libraries
-Requires:	%{name} = %{version}-%{release}
-Requires:	beryl-core-devel
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	beryl-core-devel >= 1:0.1.3
 Requires:	dbus-glib-devel >= 0.50
 Requires:	gtk+2-devel >= 2:2.8.0
 Requires:	libwnck-devel >= 2.14.1-2
@@ -50,7 +51,7 @@ Pliki nag³ówkowe dla emerald.
 Summary:	Static files for emerald
 Summary(pl):	Pliki statyczne dla emerald
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}-%{release}
+Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
 %description static
 Static files for emerald.
