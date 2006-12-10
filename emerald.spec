@@ -1,13 +1,12 @@
 Summary:	A GTK+ tool to configure window decorations in beryl
 Summary(pl):	Narzêdzie GTK+ do konfiguracji dekoracji okien w berylu
 Name:		emerald
-Version:	20061201
+Version:	0.1.3
 Release:	1
 License:	GPL/MIT
 Group:		X11
-#Source0:	http://distfiles.xgl-coffee.org/emerald/%{name}-%{version}.tar.bz2
-Source0:	%{name}-%{version}.tar.bz2
-# Source0-md5:	e0ec3812a8d1a284ff8ac2ea94b56fdc
+Source0:	http://releases.beryl-project.org/%{version}/%{name}-%{version}.tar.bz2
+# Source0-md5:	27655582912eed701eef07083d445699
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	beryl-core-devel
@@ -60,7 +59,7 @@ Static files for emerald.
 Pliki statyczne dla emerald.
 
 %prep
-%setup -q -n %{name}
+%setup -q
 
 %build
 autoreconf -v --install
