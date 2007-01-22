@@ -11,7 +11,7 @@ Source0:	http://releases.beryl-project.org/%{version}/%{name}-%{version}.tar.bz2
 URL:		http://beryl-project.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake >= 1:1.9
-BuildRequires:	beryl-core-devel >= 1:0.1.3
+BuildRequires:	beryl-core-devel >= 1:0.1.99.2
 BuildRequires:	dbus-glib-devel >= 0.50
 BuildRequires:	gtk+2-devel >= 2:2.8.0
 BuildRequires:	intltool >= 0.35.0
@@ -19,7 +19,7 @@ BuildRequires:	libwnck-devel >= 2.14.1-2
 BuildRequires:	pango-devel >= 1.10.0
 BuildRequires:	pkgconfig
 BuildRequires:	xorg-lib-libXrender-devel >= 0.8.4
-Requires:	beryl-core >= 1:0.1.3
+Requires:	beryl-core >= 1:0.1.99.2
 Obsoletes:	cgwd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
