@@ -65,6 +65,7 @@ Statyczna biblioteka Emerald Engines.
 %setup -q
 
 mv -f po/{ca_ES,ca}.po
+mv -f po/{de_DE,de}.po
 mv -f po/{es_ES,es}.po
 mv -f po/{fr_FR,fr}.po
 mv -f po/{gu_IN,gu}.po
@@ -72,6 +73,7 @@ mv -f po/{hu_HU,hu}.po
 mv -f po/{it_IT,it}.po
 mv -f po/{ja_JP,ja}.po
 mv -f po/{ko_KR,ko}.po
+mv -f po/{nb_NO,nb}.po
 mv -f po/{pt_PT,pt}.po
 mv -f po/{sv_SE,sv}.po
 mv -f po/{tr_TR,tr}.po
@@ -80,6 +82,7 @@ mv -f po/{tr_TR,tr}.po
 # NOTE: check the list after any upgrade!
 cat > po/LINGUAS <<EOF
 ca
+de
 en_GB
 es
 es_AR
@@ -89,6 +92,8 @@ hu
 it
 ja
 ko
+nb
+nl
 pt
 PT_BR
 sv
