@@ -82,6 +82,7 @@ mv -f po/{tr_TR,tr}.po
 # NOTE: check the list after any upgrade!
 cat > po/LINGUAS <<EOF
 ca
+cs
 de
 en_GB
 es
@@ -95,7 +96,7 @@ ko
 nb
 nl
 pt
-PT_BR
+pt_BR
 sv
 tr
 zh_CN
@@ -104,8 +105,8 @@ zh_TW
 EOF
 
 %build
-%{__intltoolize}
 %{__glib_gettextize}
+%{__intltoolize}
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
@@ -123,13 +124,15 @@ rm -rf $RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}/engines/*.{la,a}
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc README TODO
 %attr(755,root,root) %{_bindir}/*
