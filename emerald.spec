@@ -1,5 +1,5 @@
 Summary:	A GTK+ tool to configure window decorations in beryl
-Summary(pl.UTF-8):   Narzędzie GTK+ do konfiguracji dekoracji okien w berylu
+Summary(pl.UTF-8):	Narzędzie GTK+ do konfiguracji dekoracji okien w berylu
 Name:		emerald
 Version:	0.1.9999.1
 Release:	1
@@ -33,7 +33,7 @@ dekoracji okien w berylu.
 
 %package devel
 Summary:	Header files for Emerald Engines library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki Emerald Engines
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki Emerald Engines
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	beryl-core-devel >= 1:0.1.3
@@ -51,7 +51,7 @@ Pliki nagłówkowe biblioteki Emerald Engines.
 
 %package static
 Summary:	Static Emerald Engines library
-Summary(pl.UTF-8):   Statyczna biblioteka Emerald Engines
+Summary(pl.UTF-8):	Statyczna biblioteka Emerald Engines
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
