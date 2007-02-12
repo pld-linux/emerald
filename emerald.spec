@@ -1,5 +1,5 @@
 Summary:	A GTK+ tool to configure window decorations in beryl
-Summary(pl):	NarzÍdzie GTK+ do konfiguracji dekoracji okien w berylu
+Summary(pl.UTF-8):   Narzƒôdzie GTK+ do konfiguracji dekoracji okien w berylu
 Name:		emerald
 Version:	0.1.9999.1
 Release:	1
@@ -27,13 +27,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 emerald is window manager and tool to configure window decorations in
 beryl, it use themes for windows' decorations.
 
-%description -l pl
-emerald to zarz±dca okien oraz narzÍdzie GTK+ do konfiguracji
+%description -l pl.UTF-8
+emerald to zarzƒÖdca okien oraz narzƒôdzie GTK+ do konfiguracji
 dekoracji okien w berylu.
 
 %package devel
 Summary:	Header files for Emerald Engines library
-Summary(pl):	Pliki nag≥Ûwkowe biblioteki Emerald Engines
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe biblioteki Emerald Engines
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	beryl-core-devel >= 1:0.1.3
@@ -46,19 +46,19 @@ Requires:	xorg-lib-libXrender-devel >= 0.8.4
 %description devel
 Header files for Emerald Engines library.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe biblioteki Emerald Engines.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe biblioteki Emerald Engines.
 
 %package static
 Summary:	Static Emerald Engines library
-Summary(pl):	Statyczna biblioteka Emerald Engines
+Summary(pl.UTF-8):   Statyczna biblioteka Emerald Engines
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
 %description static
 Static Emerald Engines library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka Emerald Engines.
 
 %prep
