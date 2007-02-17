@@ -18,7 +18,11 @@ BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libwnck-devel >= 2.14.1-2
 BuildRequires:	pango-devel >= 1.10.0
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	xorg-lib-libXrender-devel >= 0.8.4
+Requires(post,postun):	gtk+2
+Requires(post,postun):	hicolor-icon-theme
+Requires(post,postun):	shared-mime-info
 Requires:	beryl-core >= 1:%{version}
 Obsoletes:	cgwd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -123,14 +127,23 @@ rm -rf $RPM_BUILD_ROOT
         DESTDIR=$RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}/engines/*.{la,a}
+# obsoleted GNOME mime-info stuff
+rm -rf $RPM_BUILD_ROOT%{_datadir}/mime-info
 
 %find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p /sbin/ldconfig
-%postun	-p /sbin/ldconfig
+%post
+/sbin/ldconfig
+%update_mime_database
+%update_icon_cache hicolor
+
+%postun
+/sbin/ldconfig
+%update_mime_database
+%update_icon_cache hicolor
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
@@ -141,7 +154,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/%{name}/engines
 %attr(755,root,root) %{_libdir}/%{name}/engines/*.so
 %{_datadir}/%{name}
-%{_datadir}/mime-info/emerald.mime
 %{_datadir}/mime/packages/emerald.xml
 %{_desktopdir}/emerald-theme-manager.desktop
 %{_pixmapsdir}/emerald-theme-manager-icon.png
