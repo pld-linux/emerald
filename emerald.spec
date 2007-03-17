@@ -8,6 +8,7 @@ License:	GPL v2+
 Group:		X11
 Source0:	http://releases.beryl-project.org/%{version}/%{name}-%{version}.tar.bz2
 # Source0-md5:	2439bc2ed32784590bacb143f0f01ea6
+Patch0:		%{name}-desktop.patch
 URL:		http://beryl-project.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake >= 1:1.9
@@ -20,6 +21,7 @@ BuildRequires:	pango-devel >= 1.10.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	xorg-lib-libXrender-devel >= 0.8.4
+Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
 Requires(post,postun):	shared-mime-info
@@ -67,6 +69,7 @@ Statyczna biblioteka Emerald Engines.
 
 %prep
 %setup -q
+%patch0 -p1
 
 mv -f po/{de_DE,de}.po
 mv -f po/{es_ES,es}.po
@@ -134,11 +137,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /sbin/ldconfig
+%update_desktop_database_post
 %update_mime_database
 %update_icon_cache hicolor
 
 %postun
 /sbin/ldconfig
+%update_desktop_database_postun
 %update_mime_database
 %update_icon_cache hicolor
 
