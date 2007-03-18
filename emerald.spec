@@ -1,13 +1,13 @@
 Summary:	A GTK+ tool to configure window decorations in beryl
 Summary(pl.UTF-8):	Narzędzie GTK+ do konfiguracji dekoracji okien w berylu
 Name:		emerald
-Version:	0.2.0
+Version:	0.2.1
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		X11
 Source0:	http://releases.beryl-project.org/%{version}/%{name}-%{version}.tar.bz2
-# Source0-md5:	2439bc2ed32784590bacb143f0f01ea6
+# Source0-md5:	dde0e2b5cbe405961a350e6d47d2445f
 Patch0:		%{name}-desktop.patch
 URL:		http://beryl-project.org/
 BuildRequires:	autoconf >= 2.57
