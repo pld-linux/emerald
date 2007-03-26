@@ -21,6 +21,7 @@ BuildRequires:	pango-devel >= 1.10.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	xorg-lib-libXrender-devel >= 0.8.4
+BuildRequires:	xorg-lib-libXres-devel >= 1.0
 Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
