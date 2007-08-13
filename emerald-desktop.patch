@@ -1,17 +1,17 @@
-diff -urN emerald-0.2.0/misc/emerald-theme-manager.desktop emerald-0.2.0.new/misc/emerald-theme-manager.desktop
---- emerald-0.2.0/misc/emerald-theme-manager.desktop	2006-09-18 00:48:50.000000000 +0200
-+++ emerald-0.2.0.new/misc/emerald-theme-manager.desktop	2007-03-17 17:37:04.000000000 +0100
-@@ -2,11 +2,10 @@
- Encoding=UTF-8
- Name=Emerald Theme Manager
+diff -ruN emerald-0.5.2./misc/emerald-theme-manager.desktop emerald-0.5.2/misc/emerald-theme-manager.desktop
+--- emerald-0.5.2./misc/emerald-theme-manager.desktop	2007-08-13 16:53:44.000000000 +0200
++++ emerald-0.5.2/misc/emerald-theme-manager.desktop	2007-08-13 16:56:53.497670072 +0200
+@@ -4,11 +4,11 @@
+ Name[fr]=Gestionnaire de thèmes Emerald
  Comment=Configure Emerald themes
+ Comment[fr]=Configurerer les options des thèmes Emerald
 -Icon=/usr/share/pixmaps/emerald-theme-manager-icon.png
 +Icon=emerald-theme-manager-icon.png
  Exec=emerald-theme-manager
  Terminal=false
  Type=Application
 -Categories=Settings;
--Exec=emerald-theme-manager -i 
 +Categories=GTK;Settings;
+ Exec=emerald-theme-manager -i 
  MimeType=application/x-emerald-theme;
  
