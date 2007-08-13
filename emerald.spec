@@ -1,5 +1,5 @@
 Summary:	An alternative themeable window decorator
-Summary(pl.UTF-8):	Alternatywny dekorator okien z obsługą tematów
+Summary(pl.UTF-8):	Alternatywny dekorator okien z obsługą motywów
 Name:		emerald
 Version:	0.5.2
 Release:	1
