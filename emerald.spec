@@ -1,18 +1,18 @@
-Summary:	A GTK+ tool to configure window decorations in beryl
-Summary(pl.UTF-8):	Narzędzie GTK+ do konfiguracji dekoracji okien w berylu
+Summary:	An alternative themeable window decorator
+Summary(pl.UTF-8):	Alternatywny dekorator okien z obsługą tematów
 Name:		emerald
-Version:	0.2.1
+Version:	0.5.2
 Release:	1
 Epoch:		1
 License:	GPL v2+
-Group:		X11
-Source0:	http://releases.beryl-project.org/%{version}/%{name}-%{version}.tar.bz2
-# Source0-md5:	dde0e2b5cbe405961a350e6d47d2445f
+Group:		X11/Applications
+Source0:	http://releases.compiz-fusion.org/%{version}/%{name}-%{version}.tar.bz2
+# Source0-md5:	149c17b0a1bddf29e1cd66d29777d96e
 Patch0:		%{name}-desktop.patch
-URL:		http://beryl-project.org/
+URL:		http://forum.compiz-fusion.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake >= 1:1.9
-BuildRequires:	beryl-core-devel >= 1:%{version}
+BuildRequires:	compiz-devel >= %{version}
 BuildRequires:	dbus-glib-devel >= 0.50
 BuildRequires:	gtk+2-devel >= 2:2.8.0
 BuildRequires:	intltool >= 0.35.0
@@ -26,24 +26,24 @@ Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
 Requires(post,postun):	shared-mime-info
-Requires:	beryl-core >= 1:%{version}
+Requires:	compiz >= %{version}
 Obsoletes:	cgwd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 emerald is window manager and tool to configure window decorations in
-beryl, it use themes for windows' decorations.
+compiz, it use themes for windows' decorations.
 
 %description -l pl.UTF-8
 emerald to zarządca okien oraz narzędzie GTK+ do konfiguracji
-dekoracji okien w berylu.
+dekoracji okien w compizie.
 
 %package devel
 Summary:	Header files for Emerald Engines library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki Emerald Engines
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	beryl-core-devel >= 1:0.1.3
+Requires:	compiz-devel >= %{version}
 Requires:	dbus-glib-devel >= 0.50
 Requires:	gtk+2-devel >= 2:2.8.0
 Requires:	libwnck-devel >= 2.14.1-2
@@ -71,43 +71,6 @@ Statyczna biblioteka Emerald Engines.
 %prep
 %setup -q
 %patch0 -p1
-
-mv -f po/{de_DE,de}.po
-mv -f po/{es_ES,es}.po
-mv -f po/{fr_FR,fr}.po
-mv -f po/{gu_IN,gu}.po
-mv -f po/{hu_HU,hu}.po
-mv -f po/{ko_KR,ko}.po
-mv -f po/{nb_NO,nb}.po
-mv -f po/{pt_PT,pt}.po
-mv -f po/{sv_SE,sv}.po
-mv -f po/{tr_TR,tr}.po
-# sv_FI is identical to sv_SE
-
-# NOTE: check the list after any upgrade!
-cat > po/LINGUAS <<EOF
-ca
-cs
-de
-en_GB
-es
-es_AR
-fr
-gu
-hu
-it
-ja
-ko
-nb
-nl
-pt
-pt_BR
-sv
-tr
-zh_CN
-zh_HK
-zh_TW
-EOF
 
 %build
 %{__glib_gettextize}
