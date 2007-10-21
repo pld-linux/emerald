@@ -6,7 +6,8 @@ Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://releases.compiz-fusion.org/%{version}/%{name}-%{version}.tar.bz2
+#Source0:	http://releases.compiz-fusion.org/%{version}/%{name}-%{version}.tar.bz2
+Source0:	%{name}-%{version}.tar.bz2
 # Source0-md5:	7e6d5cd8cc986469b93daacb9b098067
 Patch0:		%{name}-desktop.patch
 URL:		http://forum.compiz-fusion.org/
