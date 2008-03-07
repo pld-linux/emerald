@@ -1,14 +1,13 @@
 Summary:	An alternative themeable window decorator
 Summary(pl.UTF-8):	Alternatywny dekorator okien z obsługą motywów
 Name:		emerald
-Version:	0.6.0
+Version:	0.7.2
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Applications
-#Source0:	http://releases.compiz-fusion.org/%{version}/%{name}-%{version}.tar.bz2
-Source0:	%{name}-%{version}.tar.bz2
-# Source0-md5:	7e6d5cd8cc986469b93daacb9b098067
+Source0:	http://releases.compiz-fusion.org/%{version}/%{name}-%{version}.tar.bz2
+# Source0-md5:	c0cf8304a633985a438b2aea102ff4dd
 Patch0:		%{name}-desktop.patch
 URL:		http://forum.compiz-fusion.org/
 BuildRequires:	autoconf >= 2.57
