@@ -113,9 +113,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc README TODO
-%attr(755,root,root) %{_bindir}/*
+%doc AUTHORS README TODO
+%attr(755,root,root) %{_bindir}/emerald
+%attr(755,root,root) %{_bindir}/emerald-theme-manager
 %attr(755,root,root) %{_libdir}/libemeraldengine.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libemeraldengine.so.0
 %dir %{_libdir}/%{name}
 %dir %{_libdir}/%{name}/engines
 %attr(755,root,root) %{_libdir}/%{name}/engines/*.so
@@ -124,7 +126,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/emerald-theme-manager.desktop
 %{_pixmapsdir}/emerald-theme-manager-icon.png
 %{_iconsdir}/hicolor/*/*/*.png
-%{_mandir}/man1/*.1*
+%{_mandir}/man1/emerald.1*
+%{_mandir}/man1/emerald-theme-manager.1*
 
 %files devel
 %defattr(644,root,root,755)
