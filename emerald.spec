@@ -1,21 +1,23 @@
 Summary:	An alternative themeable window decorator
 Summary(pl.UTF-8):	Alternatywny dekorator okien z obsługą motywów
 Name:		emerald
-Version:	0.7.2
+Version:	0.7.4
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://releases.compiz-fusion.org/%{version}/%{name}-%{version}.tar.bz2
-# Source0-md5:	c0cf8304a633985a438b2aea102ff4dd
+# Source0-md5:	e87486acfc8a7af1aef1353b2dd05aa7
 Patch0:		%{name}-desktop.patch
 URL:		http://forum.compiz-fusion.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	compiz-devel >= %{version}
 BuildRequires:	dbus-glib-devel >= 0.50
+BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.8.0
 BuildRequires:	intltool >= 0.35.0
+BuildRequires:	libselinux-devel
 # 2.19.4 (ffu)
 BuildRequires:	libwnck-devel >= 2.14.1-2
 BuildRequires:	pango-devel >= 1.10.0
