@@ -18,6 +18,7 @@ BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.8.0
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libselinux-devel
+BuildRequires:	libtool
 # 2.19.4 (ffu)
 BuildRequires:	libwnck-devel >= 2.14.1-2
 BuildRequires:	pango-devel >= 1.10.0
