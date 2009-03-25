@@ -17,10 +17,8 @@ BuildRequires:	dbus-glib-devel >= 0.50
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.8.0
 BuildRequires:	intltool >= 0.35.0
-BuildRequires:	libselinux-devel
 BuildRequires:	libtool
-# 2.19.4 (ffu)
-BuildRequires:	libwnck-devel >= 2.14.1-2
+BuildRequires:	libwnck-devel >= 2.20.0
 BuildRequires:	pango-devel >= 1.10.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.311
@@ -49,8 +47,7 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	compiz-devel >= %{version}
 Requires:	dbus-glib-devel >= 0.50
 Requires:	gtk+2-devel >= 2:2.8.0
-Requires:	libwnck-devel >= 2.14.1-2
-Requires:	pango-devel >= 1.10.0
+Requires:	libwnck-devel >= 2.20.0
 Requires:	xorg-lib-libXrender-devel >= 0.8.4
 
 %description devel
@@ -136,8 +133,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libemeraldengine.so
 %{_libdir}/libemeraldengine.la
-%dir %{_includedir}/%{name}
-%{_includedir}/%{name}/*.h
+%{_includedir}/%{name}
 %{_pkgconfigdir}/emeraldengine.pc
 
 %files static
