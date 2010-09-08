@@ -2,13 +2,14 @@ Summary:	An alternative themeable window decorator
 Summary(pl.UTF-8):	Alternatywny dekorator okien z obsługą motywów
 Name:		emerald
 Version:	0.8.4
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://releases.compiz.org/%{version}/%{name}-%{version}.tar.bz2
 # Source0-md5:	e92fbe8252ea393206d98ed6ae9af4ec
 Patch0:		%{name}-desktop.patch
+Patch1:		%{name}-gtk+2_2_20.patch
 URL:		http://www.compiz.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake >= 1:1.9
@@ -71,6 +72,7 @@ Statyczna biblioteka Emerald Engines.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__glib_gettextize}
