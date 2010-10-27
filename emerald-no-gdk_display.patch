@@ -1,0 +1,72 @@
+--- emerald-0.8.4/src/main.c.orig	2010-10-27 23:09:01.000000000 +0200
++++ emerald-0.8.4/src/main.c	2010-10-27 23:08:34.000000000 +0200
+@@ -2457,7 +2457,7 @@
+     gdk_error_trap_push();
+ 
+     type = None;
+-    result = XGetWindowProperty(gdk_display,
++    result = XGetWindowProperty(GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
+ 				xwindow,
+ 				atom,
+ 				0, G_MAXLONG,
+@@ -4243,13 +4243,14 @@
+ 
+ static void force_quit_dialog_realize(GtkWidget * dialog, void *data)
+ {
++    Display *xdisplay = GDK_DISPLAY_XDISPLAY (gdk_display_get_default ());
+     WnckWindow *win = data;
+ 
+     gdk_error_trap_push();
+-    XSetTransientForHint(gdk_display,
++    XSetTransientForHint(xdisplay,
+ 			 GDK_WINDOW_XID(dialog->window),
+ 			 wnck_window_get_xid(win));
+-    XSync(gdk_display, FALSE);
++    XSync(xdisplay, FALSE);
+     gdk_error_trap_pop();
+ }
+ 
+@@ -4261,12 +4262,13 @@
+     unsigned char *sstr = NULL;
+     int format, result;
+     char *retval;
++    Display *xdisplay = GDK_DISPLAY_XDISPLAY (gdk_display_get_default ());
+ 
+-    atom = XInternAtom(gdk_display, "WM_CLIENT_MACHINE", FALSE);
++    atom = XInternAtom(xdisplay, "WM_CLIENT_MACHINE", FALSE);
+ 
+     gdk_error_trap_push();
+ 
+-    result = XGetWindowProperty(gdk_display,
++    result = XGetWindowProperty(xdisplay,
+ 				xwindow, atom,
+ 				0, G_MAXLONG,
+ 				FALSE, XA_STRING, &type, &format, &nitems,
+@@ -4293,6 +4295,8 @@
+ 
+ static void kill_window(WnckWindow * win)
+ {
++    GdkDisplay      *gdk_display = gdk_display_get_default ();
++    Display         *xdisplay    = GDK_DISPLAY_XDISPLAY (gdk_display);
+     WnckApplication *app;
+ 
+     app = wnck_window_get_application(win);
+@@ -4318,7 +4322,7 @@
+     }
+ 
+     gdk_error_trap_push();
+-    XKillClient(gdk_display, wnck_window_get_xid(win));
++    XKillClient(xdisplay, wnck_window_get_xid(win));
+     XSync(gdk_display, FALSE);
+     gdk_error_trap_pop();
+ }
+@@ -4739,7 +4743,8 @@
+ 
+ static int update_shadow(frame_settings * fs)
+ {
+-    Display *xdisplay = gdk_display;
++    GdkDisplay *display = gdk_display_get_default ();
++    Display *xdisplay = GDK_DISPLAY_XDISPLAY (display);
+     XRenderPictFormat *format;
+     GdkPixmap *pixmap;
+     Picture src, dst, tmp;

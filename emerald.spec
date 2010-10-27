@@ -10,6 +10,7 @@ Source0:	http://releases.compiz.org/%{version}/%{name}-%{version}.tar.bz2
 # Source0-md5:	e92fbe8252ea393206d98ed6ae9af4ec
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-gtk+2_2_20.patch
+Patch2:		%{name}-no-gdk_display.patch
 URL:		http://www.compiz.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake >= 1:1.9
@@ -73,6 +74,7 @@ Statyczna biblioteka Emerald Engines.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__glib_gettextize}
