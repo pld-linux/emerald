@@ -2,7 +2,7 @@ Summary:	An alternative themeable window decorator
 Summary(pl.UTF-8):	Alternatywny dekorator okien z obsługą motywów
 Name:		emerald
 Version:	0.8.4
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Applications
@@ -26,7 +26,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	xorg-lib-libXrender-devel >= 0.8.4
 Requires(post,postun):	desktop-file-utils
-Requires(post,postun):	gtk+2
+Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	hicolor-icon-theme
 Requires(post,postun):	shared-mime-info
 Requires:	compiz >= %{version}
