@@ -16,7 +16,7 @@ BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	compiz-devel >= %{version}
 BuildRequires:	dbus-glib-devel >= 0.50
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gtk+2-devel >= 2:2.8.0
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libtool
